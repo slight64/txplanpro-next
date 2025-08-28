@@ -57,6 +57,7 @@ const ProfileDetails = () => {
                   key={idx}
                   value={field.value as string}
                   className="h-10 rounded-2xl bg-white"
+                  readOnly
                 />
               );
             }
@@ -98,6 +99,7 @@ const ProfileDetails = () => {
                   <Input
                     value={field.value as string}
                     className="h-10 border-none focus:outline-none focus-visible:ring-0    focus-visible:ring-offset-0"
+                    readOnly
                   />
                 </div>
               );

@@ -23,6 +23,7 @@ const SignInMethods = () => {
               placeholder="byewind@twitter.com"
               className="h-10 border-none focus:outline-none focus-visible:ring-0    focus-visible:ring-offset-0 shadow-none"
               defaultValue="byewind@twitter.com"
+              readOnly
             />
           </div>
 
@@ -39,6 +40,7 @@ const SignInMethods = () => {
               placeholder="****************"
               className="h-10 border-none focus:outline-none focus-visible:ring-0    focus-visible:ring-offset-0 shadow-none"
               defaultValue="****************"
+              readOnly
             />
           </div>
         </div>
