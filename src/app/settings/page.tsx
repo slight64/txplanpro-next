@@ -1,4 +1,4 @@
-import SettingsPage from "@/pages/setings";
+import SettingsPage from "@/views/setings";
 
 export default function Home() {
   return <SettingsPage />;
