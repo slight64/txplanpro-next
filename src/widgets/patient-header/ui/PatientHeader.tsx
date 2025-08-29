@@ -23,3 +23,4 @@ export function PatientHeader({ name }: PatientHeaderProps) {
     </Card>
   );
 }
+ 

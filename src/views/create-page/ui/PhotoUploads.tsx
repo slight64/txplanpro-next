@@ -8,6 +8,7 @@ import { Card } from "@/shared/ui/card";
 import { Separator } from "@/shared/ui/separator";
 import { CloudUpload } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
+import { cn } from "@/lib/utils";
 
 const items = [
   { id: "upper", title: "Upper Jaw Photo Upload", image: upperTeeth },
@@ -15,9 +16,18 @@ const items = [
   { id: "pano", title: "X-ray Pano Photo Upload", image: xRay },
 ];
 
-export default function PhotoUploads() {
+interface PhotoUploadsProps {
+  className?: string;
+}
+
+export default function PhotoUploads({ className }: PhotoUploadsProps) {
   return (
-    <div className="rounded-3xl p-4">
+    <div
+      className={cn(
+        "p-6 bg-card-background-light rounded-2xl shadow-button-shadow",
+        className
+      )}
+    >
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
         {items.map((it) => (
           <UploadCard key={it.id} title={it.title} image={it.image} />

@@ -1,8 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Image, ClipboardList, Puzzle, Monitor } from "lucide-react";
 import { cn } from "@/lib/utils";
+import PhotosIcon from "@/shared/assets/icons/PhotosIcon";
+import { DiagnosisChart } from "./DiagnosisChart";
+import TreatmentIcon from "@/shared/assets/icons/TreatmentIcon";
+import GenerateIcon from "@/shared/assets/icons/GenerateIcon";
+import DiagnosisIcon from "@/shared/assets/icons/DiagnosisIcon";
 
 type Step = {
   label: string;
@@ -14,10 +18,10 @@ interface StepsBarProps {
 }
 
 const steps: Step[] = [
-  { label: "1 - Photos and X-ray", icon: Image },
-  { label: "2 - Diagnosis chart", icon: ClipboardList },
-  { label: "3 - Treatment chart", icon: Puzzle },
-  { label: "Generate TxPlan", icon: Monitor },
+  { label: "1 - Photos and X-ray", icon: PhotosIcon },
+  { label: "2 - Diagnosis chart", icon: DiagnosisIcon },
+  { label: "3 - Treatment chart", icon: TreatmentIcon },
+  // { label: "Generate TxPlan", icon: GenerateIcon },
 ];
 
 export default function StepsBar({ className }: StepsBarProps) {
@@ -31,7 +35,7 @@ export default function StepsBar({ className }: StepsBarProps) {
       )}
     >
       <div className="flex flex-row items-center py-1 px-3 w-full bg-card-background-light rounded-2xl shadow-button-shadow">
-        <div className="flex items-center justify-center gap-10 overflow-x-auto">
+        <div className="flex items-center justify-center gap-9 ">
           {steps.map((s, i) => {
             const Icon = s.icon;
             const isActive = i === active;
@@ -57,7 +61,7 @@ export default function StepsBar({ className }: StepsBarProps) {
                   `}
                 >
                   <Icon
-                    className={`h-5 w-5 ${
+                    className={`h-6 w-6 ${
                       isActive ? "text-primary-foreground" : "text-foreground"
                     }`}
                   />
