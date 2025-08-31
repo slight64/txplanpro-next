@@ -2,9 +2,9 @@ import { ActionBar } from "@/widgets/action-bar";
 
 import StepsBar from "./ui/StepsBar";
 import PhotoUploads from "./ui/PhotoUploads";
-import { DiagnosisChart } from "./ui/DiagnosisChart";
-import { TreatmentChart } from "./ui/TreatmentChart";
-import CreateNew from "./ui/CreateNew";
+// import { DiagnosisChart } from "./ui/DiagnosisChart";
+// import { TreatmentChart } from "./ui/TreatmentChart";
+// import CreateNew from "./ui/CreateNew";
 
 const CreatePage = () => {
   return (

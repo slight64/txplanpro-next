@@ -90,7 +90,7 @@ export default function ProfileDetails({ className }: { className?: string }) {
     Object.fromEntries(
       initialFields.map((f) => [
         f.id,
-        f.kind === "badges" ? [...f.value] : (f as any).value,
+        f.kind === "badges" ? [...f.value] : (f as Field).value,
       ])
     )
   );

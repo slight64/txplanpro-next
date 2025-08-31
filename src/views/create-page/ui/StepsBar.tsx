@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import PhotosIcon from "@/shared/assets/icons/PhotosIcon";
-import { DiagnosisChart } from "./DiagnosisChart";
 import TreatmentIcon from "@/shared/assets/icons/TreatmentIcon";
 import GenerateIcon from "@/shared/assets/icons/GenerateIcon";
 import DiagnosisIcon from "@/shared/assets/icons/DiagnosisIcon";

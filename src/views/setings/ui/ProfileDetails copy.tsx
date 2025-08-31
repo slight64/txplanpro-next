@@ -119,7 +119,7 @@ const ProfileDetails = ({ className }: { className?: string }) => {
                   <span className="text-sm px-5 pt-2 text-dropdown w-full">
                     {field.label}
                   </span>
-                  <Select defaultValue={field.value as string} p>
+                  <Select defaultValue={field.value as string}>
                     <SelectTrigger className="h-10 px-5 rounded-2xl w-full bg-white border-none shadow-none">
                       <SelectValue placeholder="English" />
                     </SelectTrigger>

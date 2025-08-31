@@ -2,7 +2,6 @@ import { Sidebar } from "@/widgets/sidebar";
 import "./globals.css";
 import { Inter, Roboto } from "next/font/google";
 import { Header } from "@/widgets/header";
-import { PatientHeader } from "@/widgets/patient-header/ui/PatientHeader";
 
 const roboto = Roboto({
   subsets: ["latin"],
