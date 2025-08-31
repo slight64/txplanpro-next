@@ -2,14 +2,14 @@ import { cn } from "@/lib/utils";
 import type { IconPropsType } from "@/shared/types/types";
 
 const PlusIcon = (props: IconPropsType) => {
-  const { className, variant = "light" } = props;
+  const { className, variant = "dark" } = props;
   const fillColor = variant === "light" ? "fill-white" : "fill-black";
 
   return (
     <svg
-      className={cn(className, fillColor)}
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
+      className={cn(fillColor, className)}
     >
       <g clipPath="url(#clip0_13_2873)">
         <path

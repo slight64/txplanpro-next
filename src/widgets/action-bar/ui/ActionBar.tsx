@@ -5,12 +5,11 @@ import SortIcon from "@/shared/assets/icons/SortIcon";
 import { Search } from "@/shared/components/Search";
 import { Button } from "@/shared/ui/button";
 import { Card } from "@/shared/ui/card";
-import React from "react";
 
 export const ActionBar = () => {
   return (
     <Card className="flex flex-row items-center py-1 px-3 w-full bg-card-background-light rounded-2xl shadow-button-shadow">
-      <Button className="text-dropdown w-[198px] h-[24px] items-center justify-center gap-3 p-0! bg-btn-dark rounded-[10px] shadow-button-shadow hover:[background:var(--background-btn-active)]">
+      <Button className="text-dropdown w-btn h-[24px] items-center justify-center gap-3 p-0! bg-btn-dark rounded-[10px] shadow-button-shadow hover:[background:var(--background-btn-active)]">
         <span className="w-fit overflow-hidden">New patient</span>
         <PlusIcon className="!w-6 !h-6" variant="dark" />
       </Button>

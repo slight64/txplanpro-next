@@ -2,13 +2,12 @@
 import upperTeeth from "@/shared/assets/img/upper-jaw.png";
 import lowerTeeth from "@/shared/assets/img/lower-jaw.png";
 import xRay from "@/shared/assets/img/x-ray.png";
-import { AspectRatio } from "@/shared/ui/aspect-ratio";
 import { Button } from "@/shared/ui/button";
 import { Card } from "@/shared/ui/card";
 import { Separator } from "@/shared/ui/separator";
-import { CloudUpload } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import { cn } from "@/lib/utils";
+import CloudIcon from "@/shared/assets/icons/CloudIcon";
 
 const items = [
   { id: "upper", title: "Upper Jaw Photo Upload", image: upperTeeth },
@@ -45,28 +44,21 @@ function UploadCard({
   image: StaticImageData;
 }) {
   return (
-    <Card className="p-6 bg-card-background-light rounded-2xl shadow-button-shadow">
+    <Card className="p-6 bg-card-background-light rounded-2xl shadow-button-shadow gap-1 items-center">
       <h3 className="text-center text-2xl font-semibold">{title}</h3>
 
-      <div className="mt-4 rounded-2xl border-2 border-dashed relative">
-        <AspectRatio ratio={16 / 10}>
-          <div className="flex h-full w-full items-center justify-center">
-            <Image
-              src={image}
-              alt=""
-              fill
-              className="object-contain rounded-xl"
-            />
-            <CloudUpload className="h-8 w-8 opacity-60 absolute" />
-          </div>
-        </AspectRatio>
+      <div className="mt-4 rounded-2xl border-2 border-dashed relative flex items-center justify-center w-[215px] h-[165px] ">
+        {/* <AspectRatio ratio={16 / 10}> */}
+        <Image src={image} alt="" fill className="object-contain rounded-xl" />
+        <CloudIcon className="h-8 w-8 absolute" />
+        {/* </AspectRatio> */}
       </div>
 
       <div className="mt-4 flex justify-center">
         <Button
           type="button"
-          variant="secondary"
-          className="h-10 rounded-2xl px-6"
+          variant="outline"
+          className="h-10 rounded-2xl px-6 text-dropdown"
         >
           Upload
         </Button>
@@ -84,7 +76,7 @@ function UploadCard({
         <Button
           type="button"
           variant="outline"
-          className="h-10 w-full rounded-2xl"
+          className="h-10 w-full rounded-2xl text-dropdown"
         >
           Upload photo from database
         </Button>

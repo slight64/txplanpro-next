@@ -4,6 +4,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* Sizes */
+
+  --spacing-btn: 198px;
+
   /* Fonts */
 
   --default-font-family: "Roboto", Helvetica;
@@ -27,11 +31,25 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
+  --color-chart-1: var(--chart-1);
+  --color-chart-1-border: var(--chart-1-border);
+  --color-chart-2: var(--chart-2);
+  --color-chart-2-border: var(--chart-2-border);
+  --color-chart-3: var(--chart-3);
+  --color-chart-3-border: var(--chart-3-border);
+  --color-chart-4: var(--chart-4);
+  --color-chart-4-border: var(--chart-4-border);
+  --color-chart-5: var(--chart-5);
+  --color-chart-5-border: var(--chart-5-border);
+
   --color-text: var(--body-text-color);
   --color-badge: var(--background-badge);
   --color-dropdown: var(--text-dropdown);
   --color-link: var(--ascent-second);
+  --color-plan-bg: var(--plan-background-gray);
   --color-btn: var(--background-btn);
+  --color-btn-pagination-active: var(--pagination-btn-active);
+  --color-btn-pagination: var(--pagination-btn);
   --color-btn-dark: var(--background-btn-dark);
   --color-btn-destructive: var(--destructive-second);
   --color-background: var(--background-dark);
@@ -61,12 +79,6 @@
   --shadow-button-shadow: var(--button-shadow);
   --shadow-card-shadow: var(--card-shadow);
   --shadow-background-blur-40: var(--background-blur-40);
-
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
 
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
@@ -109,6 +121,8 @@
   --18-regular-letter-spacing: 0px;
   --18-regular-line-height: 28px;
 
+  --pagination-btn-active: #535fff;
+  --pagination-btn: rgb(213, 213, 214);
   --ascent: rgba(119, 75, 229, 1);
   --ascent-second: #9f9ff8;
   --text-dropdown: #5e788f;
@@ -149,6 +163,7 @@
   --button-text-letter-spacing: 0px;
   --button-text-line-height: 20px;
 
+  --plan-background-gray: #747474;
   --card-background-light: rgba(240, 248, 255, 0.9);
   --card-shadow: 5px 10px 25px 0px rgba(16, 49, 77, 0.25);
   --dark-blue: rgba(14, 28, 41, 1);
@@ -201,11 +216,16 @@
   --input: oklch(0.928 0.006 264.531);
   --ring: oklch(0.707 0.022 261.325);
 
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: rgba(119, 75, 229, 1);
-  --chart-5: oklch(0.769 0.188 70.08);
+  --chart-1: #f4cac8;
+  --chart-1-border: #ff3b30;
+  --chart-2: #00e277;
+  --chart-2-border: #008a49;
+  --chart-3: #104e64;
+  --chart-3-border: #104e64;
+  --chart-4: #d5d8ff;
+  --chart-4-border: #535fff;
+  --chart-5: #ffebc7;
+  --chart-5-border: #ffa600;
 
   --sidebar: oklch(0.985 0.002 247.839);
   --sidebar-foreground: oklch(0.13 0.028 261.692);

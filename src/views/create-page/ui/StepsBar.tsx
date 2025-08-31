@@ -7,10 +7,11 @@ import { DiagnosisChart } from "./DiagnosisChart";
 import TreatmentIcon from "@/shared/assets/icons/TreatmentIcon";
 import GenerateIcon from "@/shared/assets/icons/GenerateIcon";
 import DiagnosisIcon from "@/shared/assets/icons/DiagnosisIcon";
+import { IconPropsType } from "@/shared/types/types";
 
 type Step = {
   label: string;
-  icon: React.ComponentType<{ className?: string }>;
+  icon: React.ComponentType<IconPropsType>;
 };
 
 interface StepsBarProps {
@@ -21,7 +22,7 @@ const steps: Step[] = [
   { label: "1 - Photos and X-ray", icon: PhotosIcon },
   { label: "2 - Diagnosis chart", icon: DiagnosisIcon },
   { label: "3 - Treatment chart", icon: TreatmentIcon },
-  // { label: "Generate TxPlan", icon: GenerateIcon },
+  { label: "Generate TxPlan", icon: GenerateIcon },
 ];
 
 export default function StepsBar({ className }: StepsBarProps) {
@@ -51,22 +52,10 @@ export default function StepsBar({ className }: StepsBarProps) {
                       : "text-foreground hover:bg-muted/60"
                   }`}
               >
-                <span
-                  className={`grid h-8 w-8 place-items-center rounded-lg border
-                    ${
-                      isActive
-                        ? "border-white/40 bg-white/10"
-                        : "border-foreground/20"
-                    }
-                  `}
-                >
-                  <Icon
-                    className={`h-6 w-6 ${
-                      isActive ? "text-primary-foreground" : "text-foreground"
-                    }`}
-                  />
-                </span>
-
+                <Icon
+                  className="h-6 w-6"
+                  variant={isActive ? "light" : "dark"}
+                />
                 <span className="whitespace-nowrap text-base">{s.label}</span>
               </button>
             );

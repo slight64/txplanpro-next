@@ -10,7 +10,6 @@ import {
 } from "@/shared/ui/select";
 import { Label } from "@radix-ui/react-label";
 import { X } from "lucide-react";
-import React from "react";
 
 const profileFields = [
   { value: "John", type: "text" },

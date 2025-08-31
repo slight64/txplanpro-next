@@ -1,5 +1,5 @@
 import { ActionBar } from "@/widgets/action-bar";
-import React from "react";
+
 import StepsBar from "./ui/StepsBar";
 import PhotoUploads from "./ui/PhotoUploads";
 import { DiagnosisChart } from "./ui/DiagnosisChart";

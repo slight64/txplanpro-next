@@ -1,7 +1,6 @@
 import { Button } from "@/shared/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/ui/card";
 import { Checkbox } from "@/shared/ui/checkbox";
-import React from "react";
 
 const notificationSettings = [
   { id: "notifications", label: "Notifications", email: true, phone: true },

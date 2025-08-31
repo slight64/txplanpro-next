@@ -47,7 +47,7 @@ export default function CreateNew() {
 
             {/* CTA */}
             <div className="mt-7">
-              <Button className="h-12 rounded-2xl px-6 bg-btn w-[198px]">
+              <Button className="h-12 rounded-2xl px-6 bg-btn w-btn">
                 <span className="mr-3">Create</span>
                 <Maximize2 className="h-5 w-5" />
               </Button>
