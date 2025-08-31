@@ -28,7 +28,7 @@ export function ChatInput({ className }: ChatInputProps) {
           `flex-1 resize-none overflow-y-auto max-h-[80%] 
                   border border-none rounded-lg
                   px-4 py-4 shadow-none focus-visible:ring-0
-                  text-2`,
+                  text-18`,
           className
         )}
         onKeyDown={(e) => {
@@ -40,11 +40,11 @@ export function ChatInput({ className }: ChatInputProps) {
 
       <Button
         type="button"
-        className="inline-flex bg-btn items-center justify-center gap-2 px-2 w-[94px] py-2.5
+        className="inline-flex bg-btn items-center justify-between gap-2 px-2 w-[94px] py-2
                    rounded-[10px] shadow-button-shadow h-auto absolute right-4 bottom-4 hover:[background:var(--background-btn-active)]"
       >
-        <span>Send</span>
-        <SendArrowIcon className="h-6! w-6!" />
+        <span className="font-normal">Send</span>
+        <SendArrowIcon className="h-6! w-6!" variant="light" />
       </Button>
     </div>
   );

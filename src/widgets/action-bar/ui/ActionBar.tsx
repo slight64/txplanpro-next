@@ -8,18 +8,20 @@ import { Card } from "@/shared/ui/card";
 
 export const ActionBar = () => {
   return (
-    <Card className="flex flex-row items-center py-1 px-3 w-full bg-card-background-light rounded-2xl shadow-button-shadow">
-      <Button className="text-dropdown w-btn h-[24px] items-center justify-center gap-3 p-0! bg-btn-dark rounded-[10px] shadow-button-shadow hover:[background:var(--background-btn-active)]">
+    <Card className="flex flex-row items-center py-1.5 px-3 w-full bg-card-background-light rounded-2xl shadow-button-shadow h-[44px] gap-8.5">
+      <Button className="items-center justify-between px-4! text-16 tracking-16 text-dropdown w-[180px] h-[28px] gap-3 bg-btn-dark rounded-[10px] shadow-button-shadow hover:[background:var(--background-btn-active)]">
         <span className="w-fit overflow-hidden">New patient</span>
-        <PlusIcon className="!w-6 !h-6" variant="dark" />
+        <PlusIcon className="!w-5.5 !h-5.5 fill-dropdown" />
       </Button>
-      <Button className="text-text-black px-1! py-1! bg-btn-dark rounded-[10px] shadow-button-shadow h-auto hover:[background:var(--background-btn-active)]">
-        <FilterIcon className="!w-6 !h-6" />
-      </Button>
-      <Button className="text-text-black px-1! py-1! bg-btn-dark rounded-[10px] shadow-button-shadow h-auto hover:[background:var(--background-btn-active)]">
-        <SortIcon className="!w-6 !h-6" />
-      </Button>
-      <Search className="h-[30px] rounded-xl" />
+      <div className="flex gap-2">
+        <Button className="text-text-black h-[28px] w-[28px] px-1! py-1! bg-btn-dark rounded-[10px] shadow-none hover:[background:var(--background-btn-active)]">
+          <FilterIcon className="!w-6 !h-6" />
+        </Button>
+        <Button className="text-text-black h-[28px] w-[28px] px-1! py-1! bg-btn-dark rounded-[10px] shadow-none hover:[background:var(--background-btn-active)]">
+          <SortIcon className="!w-6 !h-6" />
+        </Button>
+      </div>
+      <Search className="h-[30px] rounded-[10px]" />
     </Card>
   );
 };

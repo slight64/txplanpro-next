@@ -1,4 +1,5 @@
 "use client";
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/shared/ui/avatar";
 import { NavigationItem } from "@/features/navigation/ui";
 import { AppLogo } from "@/shared/assets/icons/AppLogo";
@@ -9,6 +10,7 @@ import {
   BOTTOM_NAVIGATION_ITEMS,
   APP_CONFIG,
 } from "@/shared/config";
+import Link from "next/link";
 
 export const Sidebar = () => {
   return (
@@ -16,10 +18,13 @@ export const Sidebar = () => {
       <nav className="items-start gap-1 self-stretch w-full flex flex-col">
         <header className="flex flex-col pt-0 pb-6 px-0 w-full">
           <h1 className="w-fit font-medium text-dark-blue text-2xl leading-7 overflow-hidden">
-            <a className="inline-flex items-center gap-2.5 cupo cursor-pointer">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2.5 cupo cursor-pointer tracking-14"
+            >
               <AppLogo />
               {APP_CONFIG.name}
-            </a>
+            </Link>
           </h1>
         </header>
 
@@ -28,29 +33,27 @@ export const Sidebar = () => {
             key={`nav-${index}`}
             icon={item.icon}
             label={item.label}
-            isActive={item.isActive}
             count={item.count}
+            href={item.href}
           />
         ))}
 
-        <div className="inline-flex h-24 px-3 py-6 rounded-lg items-center gap-3 cursor-pointer">
+        <div className="flex h-12 px-3 my-6 rounded-lg items-center gap-3 cursor-pointer">
           <Avatar className="w-12 h-12">
             <AvatarImage src={defaultUserImg.src} alt="Dr. John Doe" />
-            <AvatarFallback className="bg-[#0000000a]">JD</AvatarFallback>
+            <AvatarFallback className="bg-background">JD</AvatarFallback>
           </Avatar>
           <div className="inline-flex flex-col items-start justify-center rounded-lg">
-            <span className="self-stretch font-14-regular text-text-black text-[length:var(--14-regular-font-size)]">
-              Dr. John Doe
-            </span>
+            <span className="self-stretch text-text-black">Dr. John Doe</span>
           </div>
         </div>
 
         {BOTTOM_NAVIGATION_ITEMS.map((item, index) => (
           <NavigationItem
+            href={item.href}
             key={`bottom-nav-${index}`}
             icon={item.icon}
             label={item.label}
-            isActive={item.isActive}
           />
         ))}
       </nav>

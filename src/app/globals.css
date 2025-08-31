@@ -12,9 +12,14 @@
 
   --default-font-family: "Roboto", Helvetica;
 
-  --text-14: var(--m3-title-medium-font-size);
-  --text-16: var(--body-text-font-size);
+  --text-12: var(--12-regular-font-size);
+  --text-14: var(--14-regular-font-size);
+  --text-16: var(--16-regular-font-size);
+  --text-18: var(--18-regular-font-size);
+  --text-22: var(--h2-text-font-size);
   --text-24: var(--h1-text-font-size);
+  --text-28: var(--28-regular-font-size);
+  --text-36: var(--m3-display-small-font-size);
 
   --leading-14: var(--m3-title-medium-line-height);
   --leading-16: var(--body-text-line-height);
@@ -120,6 +125,7 @@
   --18-regular-font-weight: 400;
   --18-regular-letter-spacing: 0px;
   --18-regular-line-height: 28px;
+  --28-regular-font-size: 28px;
 
   --pagination-btn-active: #535fff;
   --pagination-btn: rgb(213, 213, 214);
@@ -168,7 +174,8 @@
   --card-shadow: 5px 10px 25px 0px rgba(16, 49, 77, 0.25);
   --dark-blue: rgba(14, 28, 41, 1);
   --h1-text-font-family: "Roboto", Helvetica;
-  --h1-text-font-size: 28px;
+  --h1-text-font-size: 24px;
+  --h2-text-font-size: 22px;
   --h1-text-font-style: normal;
   --h1-text-font-weight: 400;
   --h1-text-letter-spacing: 0px;
@@ -186,18 +193,19 @@
   --m3-title-large-letter-spacing: 0px;
   --m3-title-large-line-height: 28px;
   --m3-title-medium-font-family: "Roboto", Helvetica;
-  --m3-title-medium-font-size: 16px;
+  --m3-title-medium-font-size: 14px;
+  --m3-title-small-font-size: 12px;
   --m3-title-medium-font-style: normal;
   --m3-title-medium-font-weight: 500;
   --m3-title-medium-letter-spacing: 0.15px;
   --m3-title-medium-line-height: 24px;
   --shadow: rgba(94, 120, 143, 0.5);
-  --text-black: rgba(19, 33, 46, 1);
+  --text-black: #13212e;
   --x1-black: rgba(19, 33, 46, 1);
 
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.13 0.028 261.692);
+  --background: #ffffff;
+  --foreground: #030712;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.13 0.028 261.692);
   --popover: oklch(1 0 0);
@@ -240,7 +248,7 @@
 }
 
 .dark {
-  --background: oklch(0.13 0.028 261.692);
+  --background: #030712;
   --foreground: oklch(0.985 0.002 247.839);
   --card: oklch(0.21 0.034 264.665);
   --card-foreground: oklch(0.985 0.002 247.839);
@@ -366,10 +374,30 @@
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+  html {
+    scrollbar-gutter: stable;
+  }
+
+  html[data-scroll-locked],
+  body[data-scroll-locked] {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  html[style*="--removed-body-scroll-bar-size"],
+  body[style*="--removed-body-scroll-bar-size"] {
+    padding-right: 0 !important;
+  }
 }
 
 @layer components {
   .all-\[unset\] {
     all: unset;
+  }
+}
+
+@supports not (scrollbar-gutter: stable) {
+  html {
+    overflow-y: scroll;
   }
 }

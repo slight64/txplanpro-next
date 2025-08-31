@@ -59,38 +59,6 @@ const rows: Row[] = [
     price: "$7 500",
     status: "Rejected",
   },
-  {
-    id: "#1",
-    type: "Complex",
-    patient: "Matt Dickerson",
-    date: "13/05/2022",
-    price: "$14 000",
-    status: "Approved",
-  },
-  {
-    id: "#2",
-    type: "Ortho",
-    patient: "Johanna Doe",
-    date: "25/05/2022",
-    price: "$12 500",
-    status: "Ready",
-  },
-  {
-    id: "#3",
-    type: "Surgery",
-    patient: "Joe Mark",
-    date: "30/05/2022",
-    price: "$6 000",
-    status: "To-do",
-  },
-  {
-    id: "#4",
-    type: "Prosthetic",
-    patient: "Inna Sergeeva",
-    date: "23/05/2022",
-    price: "$7 500",
-    status: "Rejected",
-  },
 ];
 
 const PlansTable = () => {

@@ -8,9 +8,7 @@ export function Header() {
     <Card className="flex flex-col items-center gap-4 px-4 py-2 w-full bg-background-dark rounded-2xl overflow-hidden shadow-button-shadow">
       <CardContent className="inline-flex flex-col items-center gap-1">
         <div className="inline-flex flex-col">
-          <h2 className="w-fit text-24 text-text-black">
-            Welcome to TxPlanPro
-          </h2>
+          <h2 className="text-28 text-text-black">Welcome to TxPlanPro</h2>
         </div>
         <div>
           <div className="flex-col">

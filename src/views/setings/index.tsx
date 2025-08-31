@@ -22,12 +22,12 @@ const SettingsPage = () => {
   return (
     <div className="w-full">
       <ActionBar />
-      <div className="mt-2 gap-4.5 flex justify-center">
+      <div className="mt-2.5 gap-5 flex justify-center">
         {navigationTabs.map((tab, index) => (
           <Button
-            variant={"ghost"}
+            variant="ghost"
             key={index}
-            className="p-0 m-0 inline-flex flex-col items-center gap-1 relative hover:bg-transparent"
+            className="p-0 flex flex-col items-center hover:bg-transparent"
           >
             <span
               className={` ${
@@ -40,7 +40,7 @@ const SettingsPage = () => {
         ))}
       </div>
 
-      <ProfileDetails />
+      <ProfileDetails className="mt-4" />
       <SignInMethods />
       <Notifications />
       <DeactivateAccountSection />
