@@ -26,11 +26,11 @@ export const NavigationItem = ({
       href={href}
       aria-current={active ? "page" : undefined}
       className={`flex w-btn items-center gap-3 px-3 py-2 rounded-[10px]
-        hover:[background:var(--background-btn-hover)] h-auto justify-start ${
-          active
-            ? "shadow-button-shadow [background:var(--background-btn-active)] text-card-background-light"
-            : ""
-        }`}
+         ${
+           active
+             ? "shadow-button-shadow [background:var(--background-btn-active)] text-card-background-light"
+             : "hover:[background:var(--background-btn-hover)] h-auto justify-start"
+         }`}
       onClick={onClick}
     >
       <Icon className="!w-6 !h-6" variant={active ? "light" : "dark"} />
