@@ -14,7 +14,6 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/ui/card";
 import { cn } from "@/shared/lib/utils";
 
-/* ----- справочники (стабильные коды → лейблы) ----- */
 type Option = { value: string; label: string };
 
 const LANGUAGE_OPTIONS: Option[] = [
@@ -31,7 +30,6 @@ const COUNTRY_OPTIONS: Option[] = [
   { value: "DE", label: "Germany" },
 ];
 
-/* ----- типы полей ----- */
 type Field =
   | { kind: "text"; id: "firstName" | "lastName" | "phone"; value: string }
   | { kind: "badges"; id: "specialties"; value: string[] }
@@ -45,12 +43,11 @@ type Field =
       kind: "select";
       id: "country" | "language" | (string & {});
       label: string;
-      value?: string; // код из options (напр., 'US' или 'en')
+      value?: string;
       options: Option[];
       placeholder?: string;
     };
 
-/* ----- исходные поля (восстановлены все, как у тебя) ----- */
 const initialFields: Field[] = [
   { kind: "text", id: "firstName", value: "John" },
   { kind: "text", id: "lastName", value: "Doe" },
@@ -87,7 +84,6 @@ const initialFields: Field[] = [
 ];
 
 export default function ProfileDetails({ className }: { className?: string }) {
-  // единое состояние по id — легко добавлять новые поля
   const [form, setForm] = React.useState<
     Record<string, string | string[] | undefined>
   >(
@@ -148,7 +144,6 @@ export default function ProfileDetails({ className }: { className?: string }) {
                       </button>
                     </Badge>
                   ))}
-                  {/* при желании сюда можно добавить input/combobox для добавления тегов */}
                 </div>
               </div>
             );
@@ -181,7 +176,7 @@ export default function ProfileDetails({ className }: { className?: string }) {
                 <span className="text-sm px-3 pt-2 text-dropdown">
                   {f.label}
                 </span>
-                {/* контролируемый Select: placeholder видно, когда value = undefined */}
+
                 <Select
                   value={(form[f.id] as string | undefined) ?? undefined}
                   onValueChange={(val) => setField(f.id, val)}
