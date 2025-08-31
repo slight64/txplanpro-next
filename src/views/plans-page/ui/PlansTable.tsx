@@ -245,6 +245,8 @@ const PlansTable = () => {
   );
 };
 
+type AriaSort = React.AriaAttributes["aria-sort"];
+
 function ThSortable({
   label,
   active,
@@ -256,10 +258,14 @@ function ThSortable({
   dir?: "asc" | "desc";
   onClick: () => void;
 }) {
-  const aria = !active ? "none" : dir === "asc" ? "ascending" : "descending";
+  const ariaSort: AriaSort | undefined = active
+    ? dir === "asc"
+      ? "ascending"
+      : "descending"
+    : undefined;
 
   return (
-    <TableHead aria-sort={aria as any}>
+    <TableHead aria-sort={ariaSort}>
       <button
         type="button"
         onClick={onClick}
