@@ -61,7 +61,7 @@ const SignInMethods = ({ className }: { className?: string }) => {
             <Button
               type="button"
               variant="secondary"
-              className="rounded-2xl h-6 w-[63px] text-12 font-medium bg-gray-400 shadow-none"
+              className="rounded-2xl h-6 w-[63px] text-12 font-normal bg-gray-100 shadow-none"
             >
               Enable
             </Button>

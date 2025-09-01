@@ -23,11 +23,11 @@ export default function PhotoUploads({ className }: PhotoUploadsProps) {
   return (
     <div
       className={cn(
-        "p-6 bg-card-background-light rounded-2xl shadow-button-shadow",
+        "p-2 bg-card-background-light rounded-2xl shadow-button-shadow flex justify-center",
         className
       )}
     >
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-3 w-[864px]">
         {items.map((it) => (
           <UploadCard key={it.id} title={it.title} image={it.image} />
         ))}
@@ -44,39 +44,37 @@ function UploadCard({
   image: StaticImageData;
 }) {
   return (
-    <Card className="p-6 bg-card-background-light rounded-2xl shadow-button-shadow gap-1 items-center">
-      <h3 className="text-center text-2xl font-semibold">{title}</h3>
+    <Card className="p-2 bg-card-background-light rounded-2xl shadow-button-shadow gap-3 items-center">
+      <h3 className="text-center text-16 font-semibold tracking-16">{title}</h3>
 
-      <div className="mt-4 rounded-2xl border-2 border-dashed relative flex items-center justify-center w-[215px] h-[165px] ">
-        {/* <AspectRatio ratio={16 / 10}> */}
+      <div className="rounded-2xl border-2 border-dashed relative flex items-center justify-center w-[215px] h-[165px] ">
         <Image src={image} alt="" fill className="object-contain rounded-xl" />
         <CloudIcon className="h-8 w-8 absolute" />
-        {/* </AspectRatio> */}
       </div>
 
-      <div className="mt-4 flex justify-center">
+      <div className="flex justify-center">
         <Button
           type="button"
           variant="outline"
-          className="h-10 rounded-2xl px-6 text-dropdown"
+          className="h-7 w-[84px] rounded-[10px] px-6 text-dropdown"
         >
           Upload
         </Button>
       </div>
 
-      <div className="mt-4 px-1">
+      <div className="px-1  w-full">
         <div className="flex items-center gap-3">
           <Separator className="flex-1" />
-          <span className="text-sm opacity-70">OR</span>
+          <span className="text-12 text-gray-500 font-[Inter]">OR</span>
           <Separator className="flex-1" />
         </div>
       </div>
 
-      <div className="mt-4">
+      <div>
         <Button
           type="button"
           variant="outline"
-          className="h-10 w-full rounded-2xl text-dropdown"
+          className="h-8 w-[212px] rounded-[10px] text-dropdown"
         >
           Upload photo from database
         </Button>

@@ -34,8 +34,8 @@ export default function StepsBar({ className }: StepsBarProps) {
         className
       )}
     >
-      <div className="flex flex-row items-center py-1 px-3 w-full bg-card-background-light rounded-2xl shadow-button-shadow">
-        <div className="flex items-center justify-center gap-9 ">
+      <div className="flex flex-row items-center justify-center py-1 px-3 w-full bg-card-background-light rounded-2xl shadow-button-shadow">
+        <div className="flex items-center justify-between gap-3 w-[864px]">
           {steps.map((s, i) => {
             const Icon = s.icon;
             const isActive = i === active;
@@ -44,7 +44,7 @@ export default function StepsBar({ className }: StepsBarProps) {
               <button
                 key={s.label}
                 onClick={() => setActive(i)}
-                className={`group flex items-center gap-3 rounded-xl px-4 py-2 transition-all
+                className={`cursor-pointer group flex items-center gap-3 rounded-xl px-4 py-2 transition-all
                   ${
                     isActive
                       ? "bg-primary text-primary-foreground shadow-md"
