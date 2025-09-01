@@ -41,9 +41,9 @@ const SettingsPage = () => {
       </div>
 
       <ProfileDetails className="mt-4" />
-      <SignInMethods />
-      <Notifications />
-      <DeactivateAccountSection />
+      <SignInMethods className="mt-6" />
+      <Notifications className="mt-6" />
+      <DeactivateAccountSection className="mt-6" />
     </div>
   );
 };

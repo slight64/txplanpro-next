@@ -99,11 +99,11 @@ export default function ProfileDetails({ className }: { className?: string }) {
     setForm((s) => ({ ...s, [id]: value }));
 
   return (
-    <Card className={cn(" gap-1.5 py-3 px-4.5", className)}>
+    <Card className={cn(" gap-1.5 pt-2 pb-3 px-4.5", className)}>
       <CardHeader className="p-0 m-0">
-        <CardTitle className="text-sm ">Profile Details</CardTitle>
+        <CardTitle className="text-sm tracking-16">Profile Details</CardTitle>
       </CardHeader>
-      <CardContent className="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <CardContent className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {initialFields.map((f) => {
           if (f.kind === "text") {
             return (
@@ -114,7 +114,8 @@ export default function ProfileDetails({ className }: { className?: string }) {
                 <Input
                   value={String(form[f.id] ?? "")}
                   onChange={(e) => setField(f.id, e.target.value)}
-                  className="h-10 rounded-2xl w-full bg-white border-none shadow-none"
+                  placeholder={f.kind}
+                  className="h-10 pl-4.5 pt-1 rounded-2xl w-full bg-white border-none shadow-none focus-visible:ring-0 focus-visible:ring-offset-0"
                 />
               </div>
             );
@@ -124,12 +125,12 @@ export default function ProfileDetails({ className }: { className?: string }) {
             const items = (form[f.id] as string[]) ?? [];
             return (
               <div key={f.id} className="flex flex-col gap-2">
-                <div className="h-10 rounded-2xl px-3 flex items-center gap-2 flex-wrap bg-white">
+                <div className="h-10 pl-5 rounded-2xl px-3 flex items-center gap-2 flex-wrap bg-white">
                   {items.map((tag, i) => (
                     <Badge
                       key={`${tag}-${i}`}
                       variant="secondary"
-                      className="rounded-xl px-3 py-1 flex items-center gap-1"
+                      className="rounded-xl px-2 flex items-center gap-1"
                     >
                       <span>{tag}</span>
                       <button
@@ -138,9 +139,9 @@ export default function ProfileDetails({ className }: { className?: string }) {
                           const next = items.filter((_, idx) => idx !== i);
                           setField(f.id, next);
                         }}
-                        className="ml-1 hover:opacity-80"
+                        className="ml-1 hover:text-btn-destructive cursor-pointer"
                       >
-                        <X className="h-3 w-3" />
+                        <X className="h-3 w-3 " />
                       </button>
                     </Badge>
                   ))}
@@ -155,13 +156,13 @@ export default function ProfileDetails({ className }: { className?: string }) {
                 key={f.id}
                 className="flex flex-col rounded-2xl bg-white items-start"
               >
-                <span className="text-sm px-3 pt-2 text-dropdown">
+                <span className="text-sm w-full px-3 pt-3 pl-4.5 text-dropdown">
                   {f.label}
                 </span>
                 <Input
                   value={String(form[f.id] ?? "")}
                   onChange={(e) => setField(f.id, e.target.value)}
-                  className="h-10 rounded-2xl w-full bg-white border-none shadow-none"
+                  className="h-10 pl-4.5 rounded-2xl w-full bg-white border-none shadow-none focus-visible:ring-0 focus-visible:ring-offset-0"
                 />
               </div>
             );
@@ -173,7 +174,7 @@ export default function ProfileDetails({ className }: { className?: string }) {
                 key={f.id}
                 className="flex flex-col rounded-2xl bg-white items-start"
               >
-                <span className="text-sm px-3 pt-2 text-dropdown">
+                <span className="text-sm pl-4.5 px-3 pt-2 text-dropdown">
                   {f.label}
                 </span>
 
@@ -181,7 +182,7 @@ export default function ProfileDetails({ className }: { className?: string }) {
                   value={(form[f.id] as string | undefined) ?? undefined}
                   onValueChange={(val) => setField(f.id, val)}
                 >
-                  <SelectTrigger className="h-10 rounded-2xl w-full bg-white border-none shadow-none">
+                  <SelectTrigger className="h-10 pl-4.5 pt-2 rounded-2xl w-full bg-white border-none shadow-none cursor-pointer">
                     <SelectValue placeholder={f.placeholder} />
                   </SelectTrigger>
                   <SelectContent>
